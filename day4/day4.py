@@ -5,10 +5,8 @@ def part1(lines = load()):
     count = 0
     for line in lines:
         first, second = line.split(",")
-        fs, fl = first.split("-")
-        ss, sl = second.split("-")
-
-        fs, fl, ss, sl = int(fs), int(fl), int(ss), int(sl)
+        fs, fl = list(map(int, first.split("-")))
+        ss, sl = list(map(int, second.split("-")))
 
         if (fs <= ss and fl >= sl) or (ss <= fs and sl >= fl):
             count += 1
@@ -18,10 +16,8 @@ def part2(lines = load()):
     count = 0
     for line in lines:
         first, second = line.split(",")
-        fs, fl = first.split("-")
-        ss, sl = second.split("-")
-
-        fs, fl, ss, sl = int(fs), int(fl), int(ss), int(sl)
+        fs, fl = list(map(int, first.split("-")))
+        ss, sl = list(map(int, second.split("-")))
 
         if not ((fl < ss) or (sl < fs)):
             count += 1
